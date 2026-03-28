@@ -4,27 +4,7 @@ AI-powered motion transfer system that extracts motion sequences from a source v
 
 ## Architecture
 
-```mermaid
-flowchart TD
- A[ Source Video\nDriver / Motion Reference] --> B[Frame Extractor\nOpenCV]
- B --> C[Pose Estimator\nMediaPipe / OpenPose]
- C --> D[Motion Sequence\nKeypoint Trajectories]
- D --> E[Motion Encoder\nTemporal CNN / LSTM]
- E --> F[Latent Motion Code]
-
- G[ Target Image\nor Appearance Video] --> H[Appearance Encoder\nVGG / ResNet]
- H --> I[Appearance Features\nStyle / Texture]
-
- F --> J[Generator Network\nFirst Order Motion\nor MRAA / LIA]
- I --> J
- J --> K[Frame Synthesizer\nU-Net Decoder]
- K --> L[Raw Output Frames]
- L --> M[Post-Processor\nSuperResolution + Stabilizer]
- M --> N[ Output Video]
-
- O[ Warping Field\nDense Motion] --> K
- D --> O
-```
+![Architecture Diagram](https://mermaid.ink/img/Zmxvd2NoYXJ0IFRECiBBWyBTb3VyY2UgVmlkZW9cbkRyaXZlciAvIE1vdGlvbiBSZWZlcmVuY2VdIC0tPiBCW0ZyYW1lIEV4dHJhY3RvclxuT3BlbkNWXQogQiAtLT4gQ1tQb3NlIEVzdGltYXRvclxuTWVkaWFQaXBlIC8gT3BlblBvc2VdCiBDIC0tPiBEW01vdGlvbiBTZXF1ZW5jZVxuS2V5cG9pbnQgVHJhamVjdG9yaWVzXQogRCAtLT4gRVtNb3Rpb24gRW5jb2RlclxuVGVtcG9yYWwgQ05OIC8gTFNUTV0KIEUgLS0-IEZbTGF0ZW50IE1vdGlvbiBDb2RlXQoKIEdbIFRhcmdldCBJbWFnZVxub3IgQXBwZWFyYW5jZSBWaWRlb10gLS0-IEhbQXBwZWFyYW5jZSBFbmNvZGVyXG5WR0cgLyBSZXNOZXRdCiBIIC0tPiBJW0FwcGVhcmFuY2UgRmVhdHVyZXNcblN0eWxlIC8gVGV4dHVyZV0KCiBGIC0tPiBKW0dlbmVyYXRvciBOZXR3b3JrXG5GaXJzdCBPcmRlciBNb3Rpb25cbm9yIE1SQUEgLyBMSUFdCiBJIC0tPiBKCiBKIC0tPiBLW0ZyYW1lIFN5bnRoZXNpemVyXG5VLU5ldCBEZWNvZGVyXQogSyAtLT4gTFtSYXcgT3V0cHV0IEZyYW1lc10KIEwgLS0-IE1bUG9zdC1Qcm9jZXNzb3JcblN1cGVyUmVzb2x1dGlvbiArIFN0YWJpbGl6ZXJdCiBNIC0tPiBOWyBPdXRwdXQgVmlkZW9dCgogT1sgV2FycGluZyBGaWVsZFxuRGVuc2UgTW90aW9uXSAtLT4gSwogRCAtLT4gTw)
 
 ## Features
 
