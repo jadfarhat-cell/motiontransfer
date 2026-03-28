@@ -26,7 +26,7 @@ flowchart TD
     D --> O
 ```
 
-## ✨ Features
+##  Features
 
 - Keypoint-based motion extraction (body, face, hands)
 - First-Order Motion Model and MRAA architecture support
@@ -49,7 +49,7 @@ flowchart TD
 | GPU | CUDA 11.8+ |
 | Visualization | Matplotlib, imageio |
 
-## 🚀 How to Run
+##  How to Run
 
 ```bash
 # 1. Clone and install
